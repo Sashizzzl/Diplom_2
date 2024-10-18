@@ -12,7 +12,7 @@ class TestUserSignUp:
         assert '"success":true' in response.text
     @allure.title('Проверка невозможности создания пользователя, который уже зарегистрирован')
     def test_create_user_which_already_created_user_not_created_for_the_second_time(self):
-        payload = SignUpData.unique_user_data
+        payload = SignUpData.double_sign_in
         response_1 = requests.post(f'{URL}/api/auth/register', data=payload)
         assert response_1.status_code == 200
         response_2 = requests.post(f'{URL}/api/auth/register', data=payload)
