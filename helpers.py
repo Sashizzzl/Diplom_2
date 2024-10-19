@@ -17,6 +17,17 @@ class LoginData:
 class ChangeUserData:
     email = {"email": f'new_user_{random.randint(1000, 9999)}@gmail.com'}
     name = {"name": f'Sasha{random.randint(1000, 9999)}'}
+    password = {"password": random.randint(100000, 999999)}
 class Ingredients:
     correct_id = '61c0c5a71d1f82001bdaaa6d'
     incorrect_id = random.randint(100,999)
+class Answers:
+    need_authorization_text = '{"success":false,"message":"You should be authorised"}'
+    success_text = '"success":true'
+    need_ids_text = '{"success":false,"message":"Ingredient ids must be provided"}'
+    server_error_text = 'Server Error'
+    logout_text = '{"success":true,"message":"Successful logout"}'
+    incorrect_data_text = '{"success":false,"message":"email or password are incorrect"}'
+    already_exists_text = '{"success":false,"message":"User already exists"}'
+    not_enough_data_text = '{"success":false,"message":"Email, password and name are required fields"}'
+
