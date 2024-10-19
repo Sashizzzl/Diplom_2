@@ -1,14 +1,12 @@
 import requests
 from config import URL
 import allure
-import pytest
 from helpers import SignUpData
 from helpers import LoginData
 class TestUserLogin:
     @allure.title('Проверка возможности логина под существующим пользователем')
     def test_login_existing_user_login_completed(self, create_new_user):
-        payload_1 = SignUpData.unique_user_data
-        response_1 = requests.post(f'{URL}/api/auth/login', data=payload_1)
+        response_1 = requests.post(f'{URL}/api/auth/login', data=create_new_user)
         assert response_1.status_code == 200
         assert '"success":true' in response_1.text
         refresh_token =response_1.json()['refreshToken']
