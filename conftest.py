@@ -18,3 +18,7 @@ def login(create_new_user):
     refresh_token = response.json()['refreshToken']
     payload_1 = {"token": f"{refresh_token}"}
     requests.post(f'{URL}/api/auth/logout', data=payload_1)
+@pytest.fixture
+def get_ingredients_id(create_new_user,login):
+    response = requests.get(f'{URL}/api/ingredients', headers={'Authorization': login})
+    return response.json()

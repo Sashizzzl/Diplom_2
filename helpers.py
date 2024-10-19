@@ -17,3 +17,6 @@ class LoginData:
 class ChangeUserData:
     email = {"email": f'new_user_{random.randint(1000, 9999)}@gmail.com'}
     name = {"name": f'Sasha{random.randint(1000, 9999)}'}
+class Ingredients:
+    correct_id = '61c0c5a71d1f82001bdaaa6d'
+    incorrect_id = random.randint(100,999)
